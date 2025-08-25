@@ -1,6 +1,8 @@
 import { EstadoOferta } from 'src/enums/estadooferta';
 import { TipoOferta } from 'src/enums/tipooferta';
 
+import { Postulacion } from './postulacion';
+
 export class OfertaLaboral {
   id: number;
   fechaCreacion: Date;
@@ -10,7 +12,7 @@ export class OfertaLaboral {
   tipo: TipoOferta;
   estado: EstadoOferta;
   empresa: string;
-  postulaciones: number;
+  postulaciones: Postulacion[];
 
   constructor(
     id: number,
@@ -21,7 +23,7 @@ export class OfertaLaboral {
     tipo: TipoOferta,
     estado: EstadoOferta,
     empresa: string,
-    postulaciones: number,
+    postulaciones: Postulacion[],
   ) {
     this.id = id;
     this.fechaCreacion = fechaCreacion;

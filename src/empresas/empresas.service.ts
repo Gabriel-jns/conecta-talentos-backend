@@ -21,9 +21,7 @@ export class EmpresasService {
 
   createEmpresa(empresaACrear: CreateEmpresaDto): Empresa {
     const empresaExiste = this.empresas.find(
-      (empresa: Empresa) =>
-        empresa.nombre.toLowerCase() ===
-        empresaACrear.nombreEmpresa.toLowerCase(),
+      (empresa: Empresa) => empresa.nombre === empresaACrear.nombreEmpresa,
     );
     if (empresaExiste) {
       throw new BadRequestException('Empresa ya registrada');
